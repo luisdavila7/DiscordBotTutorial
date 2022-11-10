@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Discord Bot Tutorial</title>
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" 
+crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" 
+crossorigin="anonymous"></script>
+<style>
+body{
+	position: relative; /* required */
+}
+  
+/* Custom style to stick list group on top */
+.list-group{
+    position: sticky;
+    top: 15px;
+}
+</style>
+</head>
+<body data-bs-spy="scroll" data-bs-offset="15" data-bs-target="#myScrollspy">
+    <div class="container-lg my-2">
+        <h1 class="display-1 text-center">Discord Bot Tutorial</h1>
+        <h1 class="display-1 text-center">Techweek 2022 LaSalle College</h1>
+            <p class="lead text-center"><i>Hello, welcome to this tutorial to use during the presentation of the Techweek LaSalle Colllege Montreal.</i></p>
+            <p class="lead text-center"><i>Next we will present the information to prepare our bot in Discord.</i></p>
+            <p class="lead text-center"><i>Let's start!</i></p>
+        <div class="row">
+            <div class="col-sm-3" id="myScrollspy">
+                <div class="list-group">
+                    <a class="list-group-item list-group-item-action active" href="#section1">Docker Requirement for Techweek</a>
+                    <a class="list-group-item list-group-item-action" href="#section2">How to create a Bot</a>
+                    <a class="list-group-item list-group-item-action" href="#section3">How to Invite Your Bot to Join a Server</a>
+                    <a class="list-group-item list-group-item-action" href="#section4">How to Set Up Discord Events for Your Bot</a>
+                    <a class="list-group-item list-group-item-action" href="#section5">This code line by line</a>
+                </div>
+            </div>
+            <div class="col-sm-9">
+                <div id="section1">
+                    <h2>Docker Instalation</h2>
+                    <p>We are going to use Docker as a Runing Envarioment, this makes it easy for us to run the Discord Bot in a universal development environment for Python 3.10 with all the necessary libraries for the correct operation.</p>
+                    <p>To achieve this we need you to do the following prior to our presentation</p>
+                    <ol>
+                        <li>You need to create a Docker account at <a href="https://www.docker.com/">(https://www.docker.com/)</a></li>
+                        <li>You need download and install Docker<a href="https://www.docker.com/"></a></li>
+                    </ol>
+                    <p>Once you download and install Docker, the next step is to download the container image that we have prepared for an optimal development environment for this moment.</p>
+                    <p>You can find the image of Docker in the follow repository. <a href="https://github.com/esquerg/discordbot">(https://github.com/esquerg/discordbot)</a></p>
+                    <img src="./img/docker0.png" class="img-fluid">
+                    <br>
+                    <br>
+                    <p><u>You can place the downloaded image in your preferred location, however we recommend that it be the root of the C:\ since we are going to execute a series of commands from the command line to run our container.</u> </p>
+                    <p>Open your Docker App and leave it there while you run the following commands in the shell</p>
+                    <p>Execute the Command by pressing the Windows key + r, then we run cmd</p>
+                    <img src="./img/docker1.png" class="img-fluid">
+                    <p>Go to the dirrectory where you put your Docker container <i>discordbot-main</i></p>
+                    <p>Finally you need these two commands to get your Docker up and running.</p>
+                    <code>docker build -t discord-bot .</code> 
+                    <br>
+                    <code>docker run -it --rm --name discordio discord-bot</code>
+                    <p>In your first step it will look like this.</p>
+                    <img src="./img/docker2.png" class="img-fluid">
+                    <br>
+                    <br>
+                    <p>In your last step it will look like this.</p>
+                    <img src="./img/docker3.png" class="img-fluid">
+                    <br>
+                    <br>
+                    <p>Finally in your Docker App you will see that the container is <i>running.</i></p>
+                    <br>
+                    <img src="./img/docker4.png" class="img-fluid">
+                    <br>
+                    <p class="lead">If you have already reached this point, everything is ready for us to see each other at Techweek, if you have not achieved it, do not worry, we will briefly repeat the steps and you can also support us during the workshop.</p>
+                </div>
+                <hr>
+                <div id="section2">
+                    <h2>How to Create a Discord Bot Account step by step.</h2>
+                    <p class="lead">From this moment on, these instructions are for reference to guide you during our talk at TechWeek 2022, each of these steps will be shared live.</p>
+                    <p>In order to work with the Python library and the Discord API, we must first create a Discord Bot account.
+                        Here are the step to creating a Discord Bot account.</p>
+                        <ol>
+                            <li>Logged on to the Discord website.<a href="https://discord.com">(https://discord.com/)</a></li>
+                            <li>Navigate to the application page.<a href="https://discord.com/developers/applications">(https://discord.com/developers/applications)</a></li>
+                            <li>Go to click on the <i>New Application</i> button.</li>
+                            <li value = "4">Go to give the application a name and click <i>Create</i></li>
+                            <br>
+                            <img src="./img/Video1.gif" class="img-fluid">
+                            <br>
+                            <br>
+                            <li>Go to the <i>Bot</i> tab and then click <i>Add Bot</i> You will have to confirm by clicking <i>Yes, do it!</i></li>
+                            <br>
+                            <img src="./img/Video2.gif" class="img-fluid">
+                            <br>
+                            <br>
+                            <li>Please keep the default settings for Public Bot, as the picture indicates (checked) and Require OAuth2 Code Grant have to remain (unchecked).</li>
+                            <br>
+                            <img src="./img/Picture3.png" class="img-fluid">
+                            <br>
+                            <br>
+                            <li>Now, rour bot has been created.</li>
+                            <li>Now we have to copy the token.</li>
+                            <br>
+                            <img src="./img/Video3.gif" class="img-fluid">
+                        </ol>
+                        <p class="lead fw-bold">This token is your bot's password so don't share it with anybody. It could allow someone to log in to your bot and do anything he wants.</p>
+                        <p class="lead fw-bold"> You can regenerate the token anytime</p>   
+
+                </div>
+                <hr>
+                <div id="section3">
+                    <h2>How to Invite Your Bot to Join a Server</h2>
+                    <p>Now you have to get your Bot User into a server. To do this, you should create an invite URL for it.
+                        Go to the <i>OAuth2</i> tab. Then select <i>bot</i> under the <i>scopes</i>section.
+                        Now choose the permissions you want for the bot. Our bot is going to mainly use text messages so we don't need a lot of the permissions. You may need more depending on what you want your bot to do.</p>
+                    <br>
+                    <img src="./img/Video4.gif" class="img-fluid">
+                    <br>
+                    <p>After selecting the appropriate permissions, click the <i>copy</i> button above the permissions. That will copy a URL which can be used to add the bot to a server.
+                    <p>Paste the URL into your browser, choose a server to invite the bot to, and click “Authorize”.
+                        To add the bot, your account needs <i>Manage Server</i> permissions.</p> 
+                    <p>Now that you've created the bot user, we'll start writing the Python code for the bot.</p>
+                </div>
+                <hr>
+                <div id="section4">
+                    <h2>How to Set Up Discord Events for Your Bot</h2>
+                    <p>discord.py revolves around the concept of events. An event is something you listen to and then respond to. For example, when a message happens, you will receive an event about it that you can respond to.></p>
+                    <p>Let’s make a bot that replies to a specific message. This simple bot code, along with the code explanation, is taken from the discord.py documentation. We will be adding more features to the bot later.</p>  
+                    <p>Add this code to main.py. (You can name the file something else if you like, just not discord.py.) I'll explain what all this code does shortly.</p>
+                    <img src="./img/Picture4.jpeg" class="img-fluid">
+                    <br>
+                    <p>When you created your bot user on Discord, you copied a token. Now we are going to create a .env file to store the token. If you are running your code locally, you don't need the .env file. Just replace os.getenv('TOKEN') with the token. .env files are used for declaring environment variables.</p>
+                </div>
+                <hr>
+                <div id="section5">
+                    <h2>This code line by line</h2>
+                    <p>“Now let's go over what each line of code is doing in your Discord bot code.”</p>
+                    <ol>
+                        <li>The first line imports the discord.py library.</li>
+                        <li>The second line imports the os library, but this is only used for getting the TOKEN variable from the .env file. If you are not using a .env file, you do not need this line.</li>
+                        <li>Next, we create an instance of a Client. This is the connection to Discord.</li>
+                        <li>The @client.event() decorator is used to register an event. This is an asynchronous library, so things are done with callbacks. A callback is a function that is called when something else happens. In this code, the on_ready() event is called when the bot is ready to start being used. Then, when the bot receives a message, the on_message() event is called.</li>
+                        <li>The on_message() event triggers each time a message is received but we don't want it to do anything if the message is from ourselves. So if the Message.author is the same as the Client.user the code just returns.</li>
+                        <li>Next, we check if the Message.content starts with '$hello'. If so, then the bot replies with 'Hello!' to the channel it was used in.</li>
+                        <li>Now that the bot is set up, the final line runs the bot with the login token. It gets the token from out .env file.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-light text-center text-lg-start">
+        <div class="text-center p-3" style="background-color: rgba(255, 255, 255, 255);">
+          © 2022 Copyright Create for the TechWeek 2022 at LaSalle College by
+          <a class="text-dark" href="https://luisdavila7.github.io/">Creating a Discord Bot from Scratch with Python - 
+            Luis Davila, Emiliano Esquer Gaitan, Paola Gonzalez</a>
+        </div>
+      </footer>
+</body>
+</html>                            
